@@ -1,0 +1,30 @@
+<body>
+  <form class="" id="formWrite">
+    <input type="text" name="" value=""   id="name" name ="name">
+    <input type="text" name="" value=""   id="age" name ="age">
+    <input type="submit" name="" value="submit">
+  </form>
+  <script type="text/javascript">
+    (function () {
+      var formWrite = document.getElementById('formWrite');
+      formWrite.onsubmit = validate;
+
+      function validate() {
+        var inputName = document.getElementById("name"),
+            inputAge;
+        if(inputName.value === ""){
+          alert("이름써");
+          inputName.focus();
+          return false;
+        }
+        inputAge = document.getElementById("age");
+        if(inputAge.value === ""){
+          alert("나이써");
+          inputAge.focus();
+          return false;
+        }
+
+      }
+    }());
+  </script>
+</body>

@@ -1,0 +1,52 @@
+<html>
+<body>
+<head>
+<style type="text/css">
+#div0
+{
+width:100px;
+height:100px;
+background-color:green;
+position: static;
+}
+
+#div1
+{
+width:100px;
+height:100px;
+background-color:yellow;
+position: static;
+}
+#div2
+{
+width:100px;
+height:100px;
+background-color:red;
+position: static;
+}
+</style>
+</head>
+
+<div id="div0">
+1. div0
+</div>
+<div id="div1">
+2. div1
+</div>
+<div id="div2">
+  3. div2
+</div>
+
+<script type="text/javascript">
+  var i, len =3;
+	for(i=0; i<len; i++){
+  	document.getElementById("div"+i).addEventListener("click", function(){
+    	alert("div "+i);
+    }, false);
+  }
+/* 별도의 스코프가 생성 되지 않으며 addEventListener() 가 콜백 함수를 설정할 때 익명 함수가 선언 되면서 이때 스코프 체인을(scope chain)
+을 만들게 된다. 이후 루프를 돌면서  div1 div2 도 전역 변수 i 를 참조 하게  된다.
+*/
+</script>
+</body>
+</html>

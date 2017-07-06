@@ -1,0 +1,53 @@
+<html>
+<body>
+<head>
+<style type="text/css">
+#div0
+{
+width:100px;
+height:100px;
+background-color:green;
+position: static;
+}
+
+#div1
+{
+width:100px;
+height:100px;
+background-color:yellow;
+position: static;
+}
+#div2
+{
+width:100px;
+height:100px;
+background-color:red;
+position: static;
+}
+</style>
+</head>
+
+<div id="div0">
+1. div0
+</div>
+<div id="div1">
+2. div1
+</div>
+<div id="div2">
+  3. div2
+</div>
+
+<script type="text/javascript">
+  function setDivClick(i){
+    document.getElementById("div"+i).addEventListener("click", function(){
+    	alert("div "+i);
+    }, false);
+  }
+
+  var i, len =3;
+	for(i=0; i<len; i++){
+    setDivClick(i);
+  }
+</script>
+</body>
+</html>
