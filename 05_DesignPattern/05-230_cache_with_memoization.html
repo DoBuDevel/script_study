@@ -1,0 +1,34 @@
+<!-- 메모제이션 패턴 -->
+<!--  메모제이션(memozation) 패턴은 다소 생소하다. 이 패턴 역시 자바스크립트의 특징으로 인하여
+      쉽게 구현하고 활용 할 수 있다. 패턴이 이름대로 메모하는것이 특징이고 이메모를 하는 대상이
+      객체이다. 자바스크립트의 객체들은 쉽게 새로운 속성을 추가하고 수정하고 접근할 수 있다는
+      점에서 이패턴을 간단하게 적용할 수 있다.-->
+<html>
+<body>
+    <input type="text" id="itemId"></input>
+    <button id="search">Search</button>
+
+    <script>
+    (function () {
+        var inputItemId = document.getElementById("itemId");
+        function searchItem(id) {
+            var xhr;
+            if (searchItem.cache.hasOwnProperty(id)) {
+                return searchItem.cache[id];
+            }
+            xhr = new XMLHttpRequest();
+            xhr.open("GET", "/searchItem");
+            xhr.onload = function () {
+                var item = JSON.parse(xhr.responseText);
+                searchItem.cache[item.id] = item;
+            }
+            xhr.send();
+        }
+        searchItem.cache = {};
+        document.getElementById("search").addEventListener("click", function () {
+            searchItem(searchItem.value);
+        });
+    }());
+    </script>
+</body>
+</html>
