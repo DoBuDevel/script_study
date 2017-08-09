@@ -1,4 +1,4 @@
-// instanceof 는 상속여부를 구분 그런데 이건 매하다.
+// instanceof 는 상속여부를 구분 그런데 이건 애매하다.
 var person = {
     yell: function () {
         // alert("My name is " + this.name);
