@@ -2,7 +2,7 @@
 function Person() {
     this.name = "anonymous";
     this.sayHello = function () {
-        alert("Hello, my name is " + this.name);
+        console.log("Hello, my name is " + this.name);
     };
 }
 function Unikys() {
